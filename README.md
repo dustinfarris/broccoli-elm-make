@@ -1,5 +1,7 @@
 # broccoli-elm-make
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/dustinfarris/broccoli-elm-make.svg)](https://greenkeeper.io/)
+
 Compile Elm to Javascript via [elm-make](https://github.com/elm-lang/elm-make).
 
 
