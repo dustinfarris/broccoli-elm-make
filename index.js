@@ -22,6 +22,7 @@ function ElmMakePlugin(inputNode, options) {
 
   this.main = options.main || "Main.elm";
   this.output = options.output || "elm.js";
+  this.withDebug = options.debug;
 }
 
 
@@ -34,6 +35,9 @@ ElmMakePlugin.prototype.build = function() {
     "--output",
     path.join(this.outputPath, this.output)
   ];
+  if (this.withDebug) {
+    args = args.concat("--debug");
+  }
   return childProcess.execSync(args.join(" "));
 };
 

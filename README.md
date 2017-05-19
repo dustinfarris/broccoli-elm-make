@@ -28,7 +28,8 @@ const appCode = funnel('elm', { exclude: [ /Styles.elm/ ] });
 
 const js = new ElmMake(appCode, {
   main: 'elm/Main.elm',  // relative to your Brocfile.js (default: "Main.elm")
-  output: 'app.js'  // filename to write (default: "elm.js")
+  output: 'app.js',  // filename to write (default: "elm.js")
+  debug: true,  // run elm-make with --debug (default: false)
 });
 ```
 
