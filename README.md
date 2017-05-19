@@ -18,6 +18,8 @@ The plugin accepts a node to watch for changes and options.
 ### Example
 
 ```js
+// Brocfile.js
+
 const ElmMake = require('broccoli-elm-make');
 const funnel = require('broccoli-funnel');
 
@@ -25,8 +27,8 @@ const funnel = require('broccoli-funnel');
 const appCode = funnel('elm', { exclude: [ /Styles.elm/ ] });
 
 const js = new ElmMake(appCode, {
-  main: 'elm/Main.elm',
-  output: 'app.js'
+  main: 'elm/Main.elm',  // relative to your Brocfile.js (default: "Main.elm")
+  output: 'app.js'  // filename to write (default: "elm.js")
 });
 ```
 
