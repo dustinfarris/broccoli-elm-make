@@ -20,6 +20,7 @@ function ElmMakePlugin(inputNode, options) {
     annotation: options.annotation
   });
 
+  this.cwd = options.cwd;
   this.main = options.main || "Main.elm";
   this.output = options.output || "elm.js";
   this.withDebug = options.debug;
@@ -38,7 +39,7 @@ ElmMakePlugin.prototype.build = function() {
   if (this.withDebug) {
     args = args.concat("--debug");
   }
-  return childProcess.execSync(args.join(" "));
+  return childProcess.execSync(args.join(" "), { cwd: this.cwd });
 };
 
 
