@@ -20,6 +20,7 @@ function ElmMakePlugin(inputNode, options) {
     annotation: options.annotation
   });
 
+  this.make = options.make || "elm-make";
   this.main = options.main || "Main.elm";
   this.output = options.output || "elm.js";
   this.withDebug = options.debug;
@@ -29,7 +30,7 @@ function ElmMakePlugin(inputNode, options) {
 ElmMakePlugin.prototype.build = function() {
   log("Compiling", chalk.blue(this.main));
   var args = [
-    "elm-make",
+    this.make,
     this.main,
     "--yes",
     "--output",
